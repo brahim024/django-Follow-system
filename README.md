@@ -1,4 +1,4 @@
-# djnango-Follow-system
+# django-Follow-system
 This means that your users will be able to 
 follow each other and track what other users share on the platform. The relationship 
 between users is a many-to-many relationship: a user can follow multiple users and 
