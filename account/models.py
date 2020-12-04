@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-rom django.contrib.auth import User
+from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -12,11 +12,10 @@ class Profile(models.Model):
 
 
 class Contact(models.Model):
-	user_from=models.ForeignKey(User,ralated_name='rel_from_set',on_delete=models.CASCADE)
-	user_to=models.ForeignKey(User,ralated_name='rel_to_set',on_delete=models.CASCADE)
+	user_from=models.ForeignKey(User,related_name='rel_from_set',on_delete=models.CASCADE)
+	user_to=models.ForeignKey(User,related_name='rel_to_set',on_delete=models.CASCADE)
 	created=models.DateTimeField(auto_now=True,db_index=True)
 	class Meta:
-		ordering='-created'
+		ordering=('-created',)
 	def __str__(self):
 		return f'{self.user_from} follows {self.user_to}'
-		
