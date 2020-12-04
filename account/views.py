@@ -81,7 +81,13 @@ def edit(request):
                   'account/edit.html',
                   {'user_form': user_form,
                    'profile_form': profile_form})
+@login_required
 def user_list(request):
   users=User.objects.filter(is_active=True)
   context={'section':'people','user':users}
-  return render(request,'account/user/user_list',context)
+  return render(request,'account/user/user_list,html',context)
+def user_detail(request,username):
+  user=get_object_or_404(User,username=username,
+                              is_active=True)
+  context={'section':'people','user'=user}
+  return render(request,'account/user/user_detail,html',context)
