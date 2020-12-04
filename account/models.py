@@ -19,3 +19,9 @@ class Contact(models.Model):
 		ordering=('-created',)
 	def __str__(self):
 		return f'{self.user_from} follows {self.user_to}'
+user_model=User
+user_model.add_to_class('following',
+						models.ManyToManyField('self',
+							through=Contact,
+							related_name='followers',
+							symmetrical=False))
