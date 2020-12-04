@@ -89,5 +89,5 @@ def user_list(request):
 def user_detail(request,username):
   user=get_object_or_404(User,username=username,
                               is_active=True)
-  context={'section':'people','user'=user}
+  context={'section':'people','user':user}
   return render(request,'account/user/user_detail,html',context)

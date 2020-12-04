@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from . import views
-
+app_name='account'
 urlpatterns = [
     # previous login view
     # path('login/', views.user_login, name='login'),
@@ -24,5 +24,5 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('edit/', views.edit, name='edit'),
     path('users/',views.user_list,name='user_list'),
-    path('user/<username>/',views.user_detail,name='user_detail'),
+    path('users/<username>/',views.user_detail,name='user_detail'),
 ]
