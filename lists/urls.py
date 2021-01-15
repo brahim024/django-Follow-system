@@ -2,5 +2,6 @@ from django.urls import path
 from .import views
 app_name='lists'
 urlpatterns=[
-	path('',views.space_page,name='space_page'),
+	path('',views.home_page,name='home_page'),
+
 ]
