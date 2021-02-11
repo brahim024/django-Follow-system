@@ -1,8 +1,11 @@
 from django.db import models
-
+from .models import Profile
 # Create your models here.
-class Student(models.Model):
-    name=models.CharField(max_length=20)
-    age=models.IntegerField()
-    def __str__(self):
-        return self.name
+class Post(models.Model):
+	author=models.ForeignKey(Profile,on_delete=models.CASCADE)
+	body=models.TextField()
+	updated=models.DateTimeField(auto_now=True)
+	create=models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return str(self.body)[:30]
