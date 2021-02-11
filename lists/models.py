@@ -1,5 +1,5 @@
 from django.db import models
-from .models import Profile
+from profiles.models import Profile
 # Create your models here.
 class Post(models.Model):
 	author=models.ForeignKey(Profile,on_delete=models.CASCADE)
@@ -9,3 +9,6 @@ class Post(models.Model):
 
 	def __str__(self):
 		return str(self.body)[:30]
+
+	class Meta:
+		ordering=('-create',)

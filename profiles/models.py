@@ -14,4 +14,4 @@ class Profile(models.Model):
 	def __str__(self):
 		return str(slef.user.username)
 	class Meta:
-		ordering=('-created',)
+		ordering=('-create',)
