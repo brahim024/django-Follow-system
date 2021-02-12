@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock title %}
+
+{% block content %}
+    {% for profile in profiles %}
+    <div class="ui segment">
+   
+    	{{ profile}}
+    	<br>
+    	<button class="ui primary button">See Profile</button>
+    </div>	
+    {% endfor %}
+{% endblock content %}
