@@ -10,7 +10,12 @@
    
     	{{ profile}}
     	<br>
-    	<button class="ui primary button">See Profile</button>
-    </div>	
+    	<a href="{% url 'profiles:profile-detail-view' profile.pk %}">
+    		<button class="ui primary button">See Profile</button>
+    	</a>
+
+    </div>
+    {% empty %}	
+    	<h2>No Profiles yet.</h2>
     {% endfor %}
 {% endblock content %}

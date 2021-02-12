@@ -10,3 +10,7 @@ class ProfileListView(ListView):
 	def get_queryset(self):
 		profile=Profile.objects.all().exclude(user=self.request.user)
 		return profile
+
+class ProfileDetail(DetailView):
+	model=Profile
+	templates_name='profiles/profile_detail'
