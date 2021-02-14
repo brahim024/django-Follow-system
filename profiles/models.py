@@ -11,7 +11,7 @@ class Profile(models.Model):
 	create=models.DateTimeField(auto_now_add=True)
 
 	def profile_posts(self):
-		pass
+		return self.post_set.all()
 
 	def __str__(self):
 		return str(self.user.username)

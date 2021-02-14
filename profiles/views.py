@@ -31,3 +31,4 @@ class ProfileDetail(DetailView):
 
 		context['follow']=follow
 		return context
+			
